@@ -1,0 +1,97 @@
+/* Container geral */
+.login-register-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Ícone do usuário */
+.user-icon {
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-right: 5px;
+}
+
+.user-icon:hover {
+    color: #cbbba2;
+}
+
+/* LoginRegister.css */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-button, .logout-button {
+    background-color: #cbbba2;
+    color: #1c2b16;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.admin-button:hover, .logout-button:hover {
+    background-color: #8f7955;
+}
+
+/* Botão de Admin */
+.admin-button {
+    background-color: #f0e6d6; /* Nova cor de fundo */
+    color: #1c2b16;
+    border: none;
+    border-radius: 5px;
+    padding: 18px 24px; /* Ajuste do padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Ajustar a margem */
+    font-size: larger;
+    text-align: center; /* Centralizar o texto */
+    display: inline-block; /* Garantir que o botão tenha uma área de clique compacta */
+    width: auto; /* Permitir que o botão tenha largura automática */
+    height: auto; /* Permitir que o botão tenha altura automática */
+}
+
+.admin-button:hover {
+    background-color: #e0d6c6; /* Versão um pouco mais escura para hover */
+}
+
+/* Botão de Logout */
+.logout-button {
+    background-color: #f0e6d6; /* Nova cor de fundo */
+    color: #1c2b16;
+    border: none;
+    border-radius: 5px;
+    padding: 18px 24px; /* Ajuste do padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Ajustar a margem */
+    font-size: larger;
+    text-align: center; /* Centralizar o texto */
+    display: inline-block; /* Garantir que o botão tenha uma área de clique compacta */
+ /* Permitir que o botão tenha altura automática */
+}
+
+.logout-button:hover {
+    background-color: #e0d6c6; /* Versão um pouco mais escura para hover */
+}
+
+/* Link de Login/Register */
+.login-link, .logout-button {
+    background-color: #f0e6d6; /* Nova cor de fundo */
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #1c2b16;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.login-link:hover, .logout-button:hover {
+    background-color: #b0a089;
+}

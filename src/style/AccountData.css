@@ -1,0 +1,56 @@
+.account-data-section {
+    width: 800px; /* Aumenta a largura máxima da seção */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    min-height: 400px; /* Mantém a altura mínima da seção */
+}
+
+
+
+.account-data-section h2 {
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    font-size: 24px; /* Tamanho da fonte do título */
+    text-align: center; /* Centraliza o texto */
+}
+
+.account-data-section form {
+    display: flex; /* Usando flexbox para layout */
+    flex-direction: column; /* Organiza os itens em coluna */
+}
+
+.account-data-section label {
+    margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+.account-data-section input {
+    margin-bottom: 15px; /* Espaçamento abaixo dos campos de entrada */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte dos campos */
+}
+
+.account-data-section button {
+    padding: 10px; /* Espaçamento interno do botão */
+    background-color: #007BFF; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s; /* Transição suave para mudança de cor */
+}
+
+.account-data-section button:hover {
+    background-color: #0056b3; /* Cor de fundo quando o mouse passa sobre o botão */
+}
+
+.account-data-section p {
+    text-align: center; /* Centraliza o texto */
+    color: #666; /* Cor do texto informativo */
+}

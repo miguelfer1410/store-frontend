@@ -1,0 +1,363 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previne scroll horizontal em toda a página */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #688046;
+    color: #ecf0f1;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 75px; /* Aumentado para 75px */
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.header-center {
+    flex: 1 1 auto;
+    margin: 0 20px;
+    max-width: 50%;
+}
+
+.header-right {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    margin-right: 5px;
+}
+
+.icon-container:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.icon-container:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.icon {
+    color: #ecf0f1;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    padding: 8px;
+}
+
+.icon-container:hover .icon {
+    color: #cbbba2;
+}
+
+.header-right button {
+    height: 40px; /* Defina uma altura fixa */
+    padding: 0 15px; /* Padding horizontal consistente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* Tamanho de fonte consistente */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0e6d6; /* Nova cor de fundo */
+    color: #1c2b16;
+    transition: background-color 0.3s ease;
+}
+
+.header-right button:hover {
+    background-color: #e0d6c6; /* Versão um pouco mais escura para hover */
+}
+
+/* Se você estiver usando ícones, ajuste-os também */
+.header-right button .icon {
+    margin-right: 5px;
+}
+
+.messages-icon.disabled {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.messages-container {
+    position: relative;
+}
+
+.login-alert {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background-color: #f0e6d6;
+    border: 1px solid #1c2b16;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 250px;
+}
+
+.alert-content {
+    position: relative;
+    text-align: center;
+}
+
+.alert-content p {
+    margin: 0 0 10px 0;
+    color: #1c2b16;
+    font-size: 14px;
+}
+
+.login-button {
+    background-color: #1c2b16;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #2c3b26;
+}
+
+.close-icon {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    cursor: pointer;
+    color: #1c2b16;
+    font-size: 16px;
+    padding: 2px;
+}
+
+.close-icon:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .header-center {
+        order: 3;
+        flex-basis: 100%;
+        max-width: 100%;
+        margin: 10px 0 0 0;
+    }
+
+    .header-right {
+        gap: 5px;
+    }
+}
+
+.favorites-icon {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+    
+}
+
+.favorites-icon:hover {
+    color: #ff4757;
+}
+
+.favorites-icon.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Estilos para o Modal de Favoritos */
+.favorites-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    padding-top: 80px;
+}
+
+.favorites-modal {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.favorites-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.favorites-modal-header h2 {
+    margin: 0;
+    color: #2d3436;
+    font-size: 1.5rem;
+}
+
+.favorites-modal-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    max-height: calc(80vh - 70px);
+}
+
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.favorite-item:hover {
+    transform: translateX(5px);
+    background-color: #f8f9fa;
+}
+
+.favorite-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.favorite-item-info {
+    flex: 1;
+    margin-left: 1rem;
+}
+
+.favorite-item-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #2d3436;
+    cursor: pointer;
+}
+
+.favorite-item-info h3:hover {
+    color: #688046;
+}
+
+.favorite-price {
+    margin: 0.5rem 0 0;
+    color: #688046;
+    font-weight: 600;
+}
+
+.remove-favorite {
+    background: none;
+    border: none;
+    color: #ff4757;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.remove-favorite:hover {
+    transform: scale(1.1);
+}
+
+.no-favorites {
+    text-align: center;
+    color: #636e72;
+    padding: 2rem;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 2rem;
+    color: #636e72;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .favorites-modal {
+        width: 95%;
+        margin: 0 10px;
+    }
+
+    .favorite-item {
+        padding: 0.75rem;
+    }
+
+    .favorite-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .favorite-item-info h3 {
+        font-size: 0.9rem;
+    }
+}

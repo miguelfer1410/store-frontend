@@ -1,0 +1,151 @@
+.favorites-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    padding-top: 80px;
+}
+
+.favorites-modal {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.favorites-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.favorites-modal-header h2 {
+    margin: 0;
+    color: #2d3436;
+    font-size: 1.5rem;
+}
+
+.favorites-modal-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    max-height: calc(80vh - 70px);
+}
+
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.favorite-item:hover {
+    transform: translateX(5px);
+    background-color: #f8f9fa;
+}
+
+.favorite-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.favorite-item-info {
+    flex: 1;
+    margin-left: 1rem;
+}
+
+.favorite-item-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #2d3436;
+    cursor: pointer;
+}
+
+.favorite-item-info h3:hover {
+    color: #688046;
+}
+
+.favorite-price {
+    margin: 0.5rem 0 0;
+    color: #688046;
+    font-weight: 600;
+}
+
+.remove-favorite {
+    background: none;
+    border: none;
+    color: #ff4757;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.remove-favorite:hover {
+    transform: scale(1.1);
+}
+
+.no-favorites {
+    text-align: center;
+    color: #636e72;
+    padding: 2rem;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 2rem;
+    color: #636e72;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .favorites-modal {
+        width: 95%;
+        margin: 0 10px;
+    }
+
+    .favorite-item {
+        padding: 0.75rem;
+    }
+
+    .favorite-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .favorite-item-info h3 {
+        font-size: 0.9rem;
+    }
+} 

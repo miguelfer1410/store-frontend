@@ -1,0 +1,25 @@
+{
+  "short_name": "MICHSTORE",
+  "name": "MICHSTORE - Second-Hand Store",
+  "icons": [
+    {
+      "src": "../src/assets/logo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "../src/assets/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "../src/assets/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#688046",
+  "background_color": "#f0e6d6"
+}

@@ -1,0 +1,103 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    height: 97.4vh;
+}
+/* Contêiner principal do login */
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: white; /* Fundo branco para o contêiner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+    height: 50vh;
+    width: 700px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* Estilo para o título */
+.login h1 {
+    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: 24px; /* Tamanho do texto */
+    color: #333; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo do formulário */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ajusta o formulário para ocupar toda a largura */
+}
+
+/* Estilo dos inputs */
+.form input {
+    margin-top: 10px; /* Espaçamento entre os inputs */
+    padding: 10px; /* Preenchimento interno */
+    border: 1px solid lightgray; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: border-color 0.3s; /* Efeito de transição para a borda */
+    width: 500px;
+}
+
+.form input:focus {
+    border-color: #688046; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Estilo do botão de login */
+.submit {
+    height: 40px; /* Altura do botão */
+    margin-top: 20px; /* Espaçamento superior */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #688046; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    width: 520px;
+
+}
+
+.submit:hover {
+    background-color: #557536; /* Cor mais escura ao passar o mouse */
+}
+
+.auth-links {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.links-container {
+    margin-left: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+}
+
+.links-container p {
+    margin: 0;
+}
+
+.links-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links-container a:hover {
+    text-decoration: underline;
+}
+
+.forgot-password {
+    text-align: right;
+}

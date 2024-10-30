@@ -1,0 +1,119 @@
+/* Container principal do perfil */
+.manage-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.profile-button:hover {
+    background-color: #45a049;
+}
+
+/* Seção de endereços */
+.addresses-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Aumentado para ampliar as seções */
+}
+
+/* Lista de endereços (lado esquerdo) */
+.address-list {
+    flex: 1;
+    padding: 20px 80px; /* Aumentado o padding para mais espaço interno */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-right: 30px; /* Aumentado para mais espaçamento entre as seções */
+}
+
+.address-list h2 {
+    margin-bottom: 15px;
+}
+
+.address-item {
+    margin-bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.address-item p {
+    margin: 5px 0;
+}
+
+.address-list button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.address-list button:hover {
+    background-color: #007BB5;
+}
+
+/* Seção de edição de endereços (lado direito) */
+.address-edit-section {
+    flex: 1;
+    padding: 20px 80px; /* Aumentado o padding para mais espaço interno */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.address-edit-section h2 {
+    margin-bottom: 15px;
+}
+
+.address-edit-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.address-edit-section form input {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.address-edit-section form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.address-edit-section form button:hover {
+    background-color: #45a049;
+}
+
+.selected {
+    background-color: #f0f0f0;
+    border-left: 4px solid #007bff;
+}

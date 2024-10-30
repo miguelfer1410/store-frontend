@@ -1,0 +1,418 @@
+.product-details-container {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f0e6d6;
+}
+
+.product-gallery {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    height: 800px; /* Altura fixa para o container de imagens */
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.image-wrapper {
+    position: relative;
+    padding-top: 133%;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover .product-image {
+    transform: scale(1.05);
+}
+
+.nav-button {
+    background-color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    z-index: 10;
+}
+
+.nav-button:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.1);
+}
+
+.nav-button.hidden {
+    visibility: hidden;
+}
+
+.product-info-card {
+    width: 400px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    position: sticky;
+    top: 2rem;
+    height: 600px; /* Mesma altura que o gallery */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.price-badge {
+    display: inline-block;
+    background-color: #688046;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.product-info-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2d3436;
+    margin: 0;
+}
+
+.product-description {
+    color: #636e72;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex: 0 0 auto;
+}
+
+.product-meta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.meta-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.meta-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.meta-value {
+    color: #636e72;
+    font-size: 1rem;
+}
+
+.meta-row:has(.meta-item:only-child) .meta-item {
+    grid-column: span 2;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #688046;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease;
+    margin-top: auto; /* Empurra o botão para o final do card */
+}
+
+.buy-button:hover {
+    background-color: #556b3a;
+}
+
+.button-icon {
+    font-size: 1.25rem;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 1rem;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #688046;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    color: #636e72;
+    font-size: 1.125rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1200px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 1024px) {
+    .product-details-container {
+        flex-direction: column;
+    }
+
+    .product-gallery,
+    .product-info-card {
+        height: auto;
+        width: 100%;
+    }
+
+    .product-info-card {
+        position: static;
+        min-height: 600px;
+    }
+
+    .product-meta {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-gallery {
+        min-height: 400px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .image-wrapper {
+        padding-top: 100%;
+    }
+}
+
+/* Estilos do modal e desfoque de fundo */
+.chat-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
+    z-index: 1000; /* Garantir que o modal fica acima de tudo */
+}
+
+.chat-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.send-button, .close-button {
+    background-color: #688046;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.close-button {
+    background-color: #e74c3c;
+    margin-left: 0.5rem;
+}
+
+.send-button:hover {
+    background-color: #556b3a;
+}
+
+.close-button:hover {
+    background-color: #c0392b;
+}
+
+/* Cursor pointer para as imagens */
+.image-wrapper {
+    /* ... estilos existentes ... */
+    cursor: pointer;
+}
+
+/* Estilos para o modal de imagem */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+}
+
+.image-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.image-modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal-button {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 10px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.close-modal-button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .image-modal-content {
+        width: 95vw;
+    }
+
+    .close-modal-button {
+        top: -40px;
+        right: 0;
+    }
+}
+
+.favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.favorite-button:hover {
+    transform: scale(1.1);
+}
+
+.heart-icon {
+    font-size: 1.5rem;
+    color: #688046;
+}
+
+.heart-icon.favorite {
+    color: #ff4757;
+}
+
+.product-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}

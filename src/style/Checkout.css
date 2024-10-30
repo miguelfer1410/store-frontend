@@ -1,0 +1,77 @@
+.checkoutContainer {
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.shippingSection {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 450px;
+}
+
+.mainAddress {
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.selectAddress {
+    margin-bottom: 20px;
+}
+
+.selectAddress select {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.selectedAddressSection {
+    margin-top: 10px;
+    background-color: #e7f3e4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.orderSummarySection {
+    margin-top: 20px;
+    padding: 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    margin-left: 50px;
+    width: 250px;
+}
+
+.checkoutButton {
+    background-color: #688046;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.checkoutButton:hover {
+    background-color: #42502f;
+}

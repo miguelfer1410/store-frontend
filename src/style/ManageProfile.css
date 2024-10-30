@@ -1,0 +1,43 @@
+.manage-profile-container {
+    margin: 20px;
+}
+
+.buttons-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #42502f; /* Cor de fundo padrão dos botões */
+    color: white; /* Cor do texto */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra leve para os botões */
+}
+
+.profile-button:hover {
+    background-color: #5a7e44; /* Cor de fundo ao passar o mouse */
+}
+
+.profile-button.active {
+    background-color: #688046; /* Cor de fundo para o botão ativo */
+    color: white; /* Cor do texto para o botão ativo */
+    box-shadow: 0 4px 8px rgba(0, 106, 48, 0.4); /* Sombreamento mais forte para destacar o botão ativo */
+}
+
+.profile-content {
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 300px; /* Altura mínima para a seção de conteúdo */
+    transition: opacity 0.3s ease-in-out; /* Transição suave */
+    opacity: 1; /* Começa visível */
+}
+
+.profile-content.hidden {
+    opacity: 0; /* Fica invisível ao mudar */
+}

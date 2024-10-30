@@ -1,0 +1,126 @@
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #2d3436;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+    background-color: #f0e6d6;
+    border-radius: 12px;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    color: #688046;
+    margin-bottom: 1rem;
+}
+
+.about-subtitle {
+    font-size: 1.2rem;
+    color: #636e72;
+}
+
+.about-section {
+    margin-bottom: 4rem;
+}
+
+.about-section h2 {
+    color: #688046;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f0e6d6;
+    padding-bottom: 0.5rem;
+}
+
+.about-section p {
+    line-height: 1.8;
+    color: #636e72;
+}
+
+.values-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-item {
+    background-color: #f0e6d6;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-item h3 {
+    color: #688046;
+    margin-bottom: 1rem;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #688046;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: bold;
+}
+
+.team-section {
+    text-align: center;
+    background-color: #f0e6d6;
+    padding: 3rem;
+    border-radius: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-subtitle {
+        font-size: 1rem;
+    }
+
+    .values-container,
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        margin-bottom: 3rem;
+    }
+} 

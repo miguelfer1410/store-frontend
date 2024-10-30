@@ -1,0 +1,57 @@
+#searchBar {
+    border-radius: 20px; /* Bordas mais arredondadas para um visual moderno */
+    border: 3px solid #1c2b16; /* Bordas cinza claro */
+    background-color: #cbbba2; /* Cor de fundo mais clara */
+    color: black;
+    width: 500px; /* Inicialmente 100% da largura do container */
+    height: 50px; /* Aumenta a altura da barra */
+    position: static;
+    margin-top: 15px;
+    padding-left: 15px; /* Espaço interno para o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+    margin-left: -220px;
+}
+
+/* Efeito ao passar o mouse */
+#searchBar:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra um pouco mais forte */
+}
+
+/* Efeito ao focar */
+#searchBar:focus {
+    outline: none; /* Remove a borda padrão ao focar */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao focar */
+    border-color: #688046; /* Borda azul clara ao focar */
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    #searchBar {
+        width: 90%; /* Reduz a largura para telas menores */
+    }
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f1;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+}
+
+.search-icon {
+    color: #688046;
+    margin-right: 5px;
+    flex-shrink: 0;
+}

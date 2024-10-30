@@ -1,0 +1,11 @@
+.message-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.message-content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+}
